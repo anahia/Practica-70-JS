@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<!--esta es mi practica 70-->
+
+<head>
+    <title>Practica 70</title>
+    <meta charset="UTF-8">
+    <style>
+        .boton {
+            width: 25px;
+            height: 25px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="button" id="1" name="1" value=" " class="boton">
+        <input type="button" id="2" name="2" value=" " class="boton">
+        <input type="button" id="3" name="3" value=" " class="boton">
+    </div>
+    <div>
+        <input type="button" id="4" name="4" value=" " class="boton">
+        <input type="button" id="5" name="5" value=" " class="boton">
+        <input type="button" id="6" name="6" value=" " class="boton">
+    </div>
+    <div>
+        <input type="button" id="7" name="7" value=" " class="boton">
+        <input type="button" id="8" name="8" value=" " class="boton">
+        <input type="button" id="9" name="9" value=" " class="boton">
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', start, false);
+        var player;
+        player = 'x';
+
+        function start() {
+            var a;
+            for (a = 1; a <= 9; a++) {
+                document.getElementById('boton' + a).addEventListener('click', now, false);
+            }
+        }
+
+        function now(evt) {
+            evt.target.value = player;
+            if (player == 'x')
+                player = 'o';
+            else
+                player = 'x';
+            winner();
+        }
+
+        function winner() {
+            var one;
+            var two;
+            var three;
+            var four;
+            var five;
+            var six;
+            var seven;
+            var eigth;
+            var nine;
+            one = document.getElementById('1').value;
+            two = document.getElementById('2').value;
+            three = document.getElementById('3').value;
+            four = document.getElementById('4').value;
+            five = document.getElementById('5').value;
+            six = document.getElementById('6').value;
+            seven = document.getElementById('7').value;
+            eigth = document.getElementById('8').value;
+            nine = document.getElementById('9').value;
+
+            if (one == 'x' && two == 'x' && three == 'x')
+                alert('x is Winner');
+            if (four == 'X' && five == 'X' && six == 'X')
+                alert('x is Winner');
+            if (seven == 'x' && eigth == 'x' && nine == 'x')
+                alert('x is Winner');
+
+
+            if (one == 'o' && two == 'o' && three == 'o')
+                alert('o is Winner');
+            if (four == 'o' && five == 'o' && six == 'o')
+                alert('o is Winner');
+            if (seven == 'o' && eigth == 'o' && nine == 'o')
+                alert('o is Winner');
+
+        }
+    </script>
+
+</body>
+
+</html>
